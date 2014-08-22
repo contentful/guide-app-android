@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Maps API V2 -->
+    <string name="maps_api_key"></string>
+
+    <!-- Contentful Delivery API -->
+    <string name="cda_space_key">nhkrrfkqkvcv</string>
+    <string name="cda_access_token">4c1379f8fa28be7025968c1163b13e23ded85d5747c06f9634abd9724a70fd17</string>
+    <string name="cda_place_content_type_id">3hEsRfcKgMGSaiocGQaqCo</string>
+</resources>

@@ -1,0 +1,30 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "com.contentful.guide"
+        minSdkVersion 14
+        targetSdkVersion 20
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+    // remote
+    compile "com.android.support:support-v4:20.0.+"
+    compile 'com.google.android.gms:play-services:5.0.89'
+    compile 'com.contentful.java:java-sdk:1.0.1'
+    compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
+    compile 'com.squareup.picasso:picasso:2.3.3'
+}

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Guide</string>
+
+    <!-- Tab titles -->
+    <string name="tab_places">Places</string>
+    <string name="tab_map">Map</string>
+
+    <!-- InfoActivity -->
+    <string name="activity_info_title_opening_times">Opening Times</string>
+    <string name="error_request_failed">Oops, something went wrong, please try again.</string>
+</resources>
