@@ -11,7 +11,7 @@ import com.contentful.java.api.CDAClient;
 public class CFUtils {
     private static CDAClient sClient;
 
-    public static CDAClient getClient(Context context) {
+    public synchronized static CDAClient getClient(Context context) {
         if (sClient == null) {
             // Create the client
             sClient = new CDAClient.Builder()
