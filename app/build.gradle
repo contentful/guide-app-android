@@ -24,7 +24,7 @@ dependencies {
     // remote
     compile "com.android.support:support-v4:20.0.+"
     compile 'com.google.android.gms:play-services:5.0.89'
-    compile 'com.contentful.java:java-sdk:1.0.3'
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
     compile 'com.squareup.picasso:picasso:2.3.3'
+    compile 'com.contentful.java:java-sdk:1.0.4'
 }
