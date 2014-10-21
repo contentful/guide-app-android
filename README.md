@@ -1,5 +1,7 @@
 ## Guide app
 
+[![Build Status](https://travis-ci.org/contentful/guide-app-android.svg)](https://travis-ci.org/contentful/guide-app-android/builds#)
+
 A generic app for shop guides which uses Contentful as CMS.
 
 ## Setup
