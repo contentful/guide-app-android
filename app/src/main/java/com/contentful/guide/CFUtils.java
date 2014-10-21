@@ -9,22 +9,23 @@ import com.contentful.java.api.CDAClient;
  * Utilities.
  */
 public class CFUtils {
-    private static CDAClient sClient;
+  private CFUtils() {
+  }
 
-    public synchronized static CDAClient getClient(Context context) {
-        if (sClient == null) {
-            // Create the client
-            sClient = new CDAClient.Builder()
-                    .setSpaceKey(context.getString(R.string.cda_space_key))
-                    .setAccessToken(context.getString(R.string.cda_access_token))
-                    .build();
+  private static CDAClient client;
 
-            // Register the Place class
-            sClient.registerCustomClass(
-                    context.getString(R.string.cda_place_content_type_id),
-                    Place.class);
-        }
+  public synchronized static CDAClient getClient(Context context) {
+    if (client == null) {
+      // Create the client
+      client = new CDAClient.Builder().setSpaceKey(context.getString(R.string.cda_space_key))
+          .setAccessToken(context.getString(R.string.cda_access_token))
+          .build();
 
-        return sClient;
+      // Register the Place class
+      client.registerCustomClass(context.getString(R.string.cda_place_content_type_id),
+          Place.class);
     }
+
+    return client;
+  }
 }

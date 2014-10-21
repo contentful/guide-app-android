@@ -106,6 +106,9 @@
 
         <!-- Checks for common coding problems               -->
         <!-- See http://checkstyle.sf.net/config_coding.html -->
+        <module name="InnerAssignment">
+          <property name="tokens" value="PLUS_ASSIGN,MINUS_ASSIGN"/>
+        </module>
         <module name="AvoidInlineConditionals"/>
         <module name="CovariantEquals"/>
         <!--<module name="DoubleCheckedLocking"/>-->
@@ -114,7 +117,6 @@
         <module name="EqualsHashCode"/>
         <!--<module name="HiddenField"/>-->
         <module name="IllegalInstantiation"/>
-        <module name="InnerAssignment"/>
         <!--<module name="MagicNumber"/>-->
         <module name="MissingSwitchDefault"/>
         <module name="RedundantThrows">
