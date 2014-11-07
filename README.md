@@ -19,7 +19,7 @@ In the Android SDK Manager, ensure that the following are installed, and are upd
 - Extras > Google Play services
 - Extras > Google Repository
 
-Also, make sure to have JDK 7 installed on your machine, and configure it as well in your IDE.
+Also, make sure to have JDK 7 installed on your machine, and configured in your IDE.
 
 ## Screenshots
 
