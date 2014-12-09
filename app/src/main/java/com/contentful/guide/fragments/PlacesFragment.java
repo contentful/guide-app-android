@@ -17,12 +17,10 @@ import com.contentful.guide.R;
 import com.contentful.guide.activities.InfoActivity;
 import com.contentful.guide.adapters.PlacesAdapter;
 import com.contentful.guide.model.Place;
-import com.contentful.java.model.CDAArray;
+import com.contentful.java.cda.model.CDAArray;
 
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
-
-import retrofit.client.Response;
 
 /**
  * Places Fragment class, holds a layout consisting of a {@link android.widget.ListView}.
@@ -51,22 +49,22 @@ public class PlacesFragment extends Fragment {
       // Make a request to the Delivery API and attempt to fetch all Entries of a specific
       // Content Type, ordered by rating. We also keep a reference to the callback instance,
       // which makes it possible to cancel the request in the future if necessary.
-      HashMap<String, String> query = new HashMap<String, String>();
+      HashMap<String, String> query = new HashMap<>();
       query.put("content_type", getString(R.string.cda_place_content_type_id));
       query.put("order", "-fields.rating");
 
       CFUtils.getClient(getActivity())
-          .fetchEntriesMatching(query,
-              cb = new CustomCallback<CDAArray>(new WeakReference<Activity>(getActivity())) {
-                @Override
-                protected void onSuccess(CDAArray array, Response response) {
-                  // Request was successful, add all result items to the adapter and
-                  // notify any observers.
-                  if (adapter.addFromArray(array)) {
-                    adapter.notifyDataSetChanged();
-                  }
-                }
-              });
+          .entries().async().fetchAll(query,
+          cb = new CustomCallback<CDAArray>(new WeakReference<Activity>(getActivity())) {
+            @Override
+            protected void onSuccess(CDAArray array) {
+              // Request was successful, add all result items to the adapter and
+              // notify any observers.
+              if (adapter.addFromArray(array)) {
+                adapter.notifyDataSetChanged();
+              }
+            }
+          });
     }
   }
 
