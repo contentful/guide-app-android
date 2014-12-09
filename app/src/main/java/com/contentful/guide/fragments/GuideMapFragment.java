@@ -9,8 +9,8 @@ import com.contentful.guide.CustomCallback;
 import com.contentful.guide.R;
 import com.contentful.guide.activities.InfoActivity;
 import com.contentful.guide.model.Place;
-import com.contentful.java.model.CDAArray;
-import com.contentful.java.model.CDAResource;
+import com.contentful.java.cda.model.CDAArray;
+import com.contentful.java.cda.model.CDAResource;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -21,8 +21,6 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.lang.ref.WeakReference;
 import java.util.HashMap;
-
-import retrofit.client.Response;
 
 /**
  * An extension to the {@link com.google.android.gms.maps.SupportMapFragment} class.
@@ -81,7 +79,7 @@ public class GuideMapFragment extends SupportMapFragment
    */
   private void showMarkers() {
     // Initialize markers mapping
-    markers = new HashMap<Marker, Place>();
+    markers = new HashMap<>();
 
     // Extract attached Place if there is one.
     Bundle b = getArguments();
@@ -94,9 +92,9 @@ public class GuideMapFragment extends SupportMapFragment
     if (place == null) {
       // No Place attached, fetch and display all.
       CFUtils.getClient(getActivity())
-          .fetchEntries(
+          .entries().async().fetchAll(
               cb = new CustomCallback<CDAArray>(new WeakReference<Activity>(getActivity())) {
-                @Override protected void onSuccess(CDAArray array, Response response) {
+                @Override protected void onSuccess(CDAArray array) {
                   // Request was successful, add Markers for all result items. This also
                   // creates a LatLngBounds to help center the map while displaying all
                   // newly created Markers.

@@ -1,7 +1,7 @@
 package com.contentful.guide.model;
 
-import com.contentful.java.model.CDAAsset;
-import com.contentful.java.model.CDAEntry;
+import com.contentful.java.cda.model.CDAAsset;
+import com.contentful.java.cda.model.CDAEntry;
 import com.google.android.gms.maps.model.LatLng;
 
 import java.util.ArrayList;

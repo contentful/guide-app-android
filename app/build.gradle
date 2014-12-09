@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 21
-    buildToolsVersion "21.0.1"
+    buildToolsVersion "21.1.1"
 
     defaultConfig {
         applicationId "com.contentful.guide"
@@ -13,7 +13,7 @@ android {
     }
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -23,11 +23,11 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     // remote
-    compile "com.android.support:support-v4:21.0.0"
-    compile 'com.google.android.gms:play-services:6.1.11'
+    compile "com.android.support:support-v4:21.0.2"
+    compile 'com.google.android.gms:play-services:6.5.87'
     compile 'com.astuetz:pagerslidingtabstrip:1.0.1'
-    compile 'com.squareup.picasso:picasso:2.3.3'
-    compile 'com.contentful.java:java-sdk:1.0.6'
+    compile 'com.squareup.picasso:picasso:2.4.0'
+    compile 'com.contentful.java:java-sdk:2.0.0'
 }
 
 apply from: rootProject.file('gradle/checkstyle.gradle')

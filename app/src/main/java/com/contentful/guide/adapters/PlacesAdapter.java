@@ -11,8 +11,8 @@ import android.widget.TextView;
 import com.contentful.guide.CircleTransform;
 import com.contentful.guide.R;
 import com.contentful.guide.model.Place;
-import com.contentful.java.model.CDAArray;
-import com.contentful.java.model.CDAResource;
+import com.contentful.java.cda.model.CDAArray;
+import com.contentful.java.cda.model.CDAResource;
 import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
@@ -25,7 +25,7 @@ public class PlacesAdapter extends BaseAdapter {
 
   public PlacesAdapter(Context context) {
     this.context = context;
-    this.data = new ArrayList<Place>();
+    this.data = new ArrayList<>();
   }
 
   @Override public int getCount() {

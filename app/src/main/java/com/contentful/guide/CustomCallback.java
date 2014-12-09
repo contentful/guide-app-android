@@ -3,14 +3,14 @@ package com.contentful.guide;
 import android.app.Activity;
 import android.widget.Toast;
 
-import com.contentful.java.api.CDACallback;
+import com.contentful.java.cda.CDACallback;
 
 import java.lang.ref.WeakReference;
 
 import retrofit.RetrofitError;
 
 /**
- * An extension of the {@link com.contentful.java.api.CDACallback} class which keeps
+ * An extension of the {@link com.contentful.java.cda.CDACallback} class which keeps
  * a {@link java.lang.ref.WeakReference} to an {@link android.app.Activity} instance,
  * and displays a simple {@link android.widget.Toast} in case the request fails for any reason.
  */
