@@ -54,17 +54,19 @@ public class PlacesFragment extends Fragment {
       query.put("order", "-fields.rating");
 
       CFUtils.getClient(getActivity())
-          .entries().async().fetchAll(query,
-          cb = new CustomCallback<CDAArray>(new WeakReference<Activity>(getActivity())) {
-            @Override
-            protected void onSuccess(CDAArray array) {
-              // Request was successful, add all result items to the adapter and
-              // notify any observers.
-              if (adapter.addFromArray(array)) {
-                adapter.notifyDataSetChanged();
-              }
-            }
-          });
+          .entries()
+          .async()
+          .fetchAll(query,
+              cb = new CustomCallback<CDAArray>(new WeakReference<Activity>(getActivity())) {
+                @Override
+                protected void onSuccess(CDAArray array) {
+                  // Request was successful, add all result items to the adapter and
+                  // notify any observers.
+                  if (adapter.addFromArray(array)) {
+                    adapter.notifyDataSetChanged();
+                  }
+                }
+              });
     }
   }
 
