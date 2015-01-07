@@ -26,7 +26,7 @@ Also, make sure to have JDK 7 installed on your machine, and configured in your 
 
 ## License
 
-Copyright (c) 2014 Contentful GmbH. See [LICENSE.txt][3] for further details.
+Copyright (c) 2015 Contentful GmbH. See [LICENSE.txt][3] for further details.
 
 [1]: https://developers.google.com/maps/documentation/android/start#get_an_android_certificate_and_the_google_maps_api_key
 [2]: app/src/main/res/values/config.xml
